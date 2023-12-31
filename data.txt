@@ -1,0 +1,80 @@
+  FAQs
+
+  What is Frontend Mentor, and how will it help me?
+
+  Frontend Mentor offers realistic coding challenges to help developers improve their 
+  frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for 
+  all levels and ideal for portfolio building.
+
+  Is Frontend Mentor free?
+
+  Yes, Frontend Mentor offers both free and premium coding challenges, with the free 
+  option providing access to a range of projects suitable for all skill levels.
+
+  Can I use Frontend Mentor projects in my portfolio?
+
+  Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
+  way to showcase your skills to potential employers!
+
+  How can I get help if I'm stuck on a Frontend Mentor challenge?
+  
+  The best place to get help is inside Frontend Mentor's Discord community. There's a help 
+  channel where you can ask questions and seek support from other community members.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .container {
+      overflow: hidden; /* Ensures the content doesn't overflow */
+      transition: height 0.5s ease-in-out; /* Smooth transition for height change */
+      border: 1px solid #ccc; /* Optional: Add a border for visual clarity */
+    }
+
+    .content {
+      padding: 20px; /* Some padding for content */
+    }
+
+    /* Optional: add some styling to make it visually appealing */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <!-- Your content goes here -->
+      <p>This is some content inside the div.</p>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript to trigger size change (for example, on click)
+    const container = document.querySelector('.container');
+
+    container.addEventListener('click', () => {
+      // Add or remove content to trigger a size change
+      const content = document.querySelector('.content');
+      content.innerHTML += '<p>New content</p>';
+      
+      // Trigger a reflow to apply the transition
+      const height = container.clientHeight;
+      container.style.height = height + 'px';
+
+      // Timeout to allow the browser to apply the new height before removing the content
+      setTimeout(() => {
+        content.innerHTML = '';
+        container.style.height = '';
+      }, 500);
+    });
+  </script>
+</body>
+</html>
